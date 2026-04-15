@@ -79,10 +79,10 @@ def processCommand(c):
             for article in articles:
                 speak(article['title'])
 
-    else:
-        # Let OpenAI handle the request
-        output = aiProcess(c)
-        speak(output) 
+    # else:
+    #     # Let OpenAI handle the request
+    #     output = aiProcess(c)
+    #     speak(output) 
 
 
 
