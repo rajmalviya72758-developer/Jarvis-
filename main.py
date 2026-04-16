@@ -3,6 +3,17 @@ import webbrowser
 import pyttsx3
 import musicLibrary
 import requests
+#List of pakages used.
+'''
+pip install pyttsx3
+pip install tools
+pip intall pygame
+pip install gTTS
+pip install pyttsx3
+pip install Pyaudio
+pip install SpeechRecognition
+'''
+
 # from openai import OpenAI
 from gtts import gTTS
 import pygame
@@ -12,7 +23,7 @@ import os
 
 recognizer = sr.Recognizer()
 engine = pyttsx3.init() 
-newsapi = "<Your Key Here>"
+# newsapi = "<Your Key Here>"
 
 def speak_old(text):
     engine.say(text)
@@ -37,20 +48,20 @@ def speak(text):
     
     pygame.mixer.music.unload()
     os.remove("temp.mp3") 
+#I have comented this as i do not have any api key
+'''def aiProcess(command):
+    client = OpenAI(api_key="<Your Key Here>",
+    )
 
-# def aiProcess(command):
-#     client = OpenAI(api_key="<Your Key Here>",
-#     )
+    completion = client.chat.completions.create(
+    model="gpt-3.5-turbo",
+    messages=[
+        {"role": "system", "content": "You are a virtual assistant named jarvis skilled in general tasks like Alexa and Google Cloud. Give short responses please"},
+        {"role": "user", "content": command}
+    ]
+    )
 
-#     completion = client.chat.completions.create(
-#     model="gpt-3.5-turbo",
-#     messages=[
-#         {"role": "system", "content": "You are a virtual assistant named jarvis skilled in general tasks like Alexa and Google Cloud. Give short responses please"},
-#         {"role": "user", "content": command}
-#     ]
-#     )
-
-#     return completion.choices[0].message.content
+    return completion.choices[0].message.content'''
 
 def processCommand(c):
     if "open google" in c.lower():
@@ -61,6 +72,10 @@ def processCommand(c):
         webbrowser.open("https://youtube.com")
     elif "open linkedin" in c.lower():
         webbrowser.open("https://linkedin.com")
+    elif "open monkey type" in c.lower():
+        webbrowser.open("https://monkeytype.com/")
+    elif "open chat ai" in c.lower():
+        webbrowser.open("https://chatgpt.com/")
     elif c.lower().startswith("play"):
         song = c.lower().split(" ")[1]
         link = musicLibrary.music[song]
@@ -102,7 +117,7 @@ if __name__ == "__main__":
                 audio = r.listen(source, timeout=2, phrase_time_limit=1)
             word = r.recognize_google(audio)
             if(word.lower() == "jarvis"):
-                speak("Ya")
+                speak("Yes...")
                 # Listen for command
                 with sr.Microphone() as source:
                     print("Jarvis Active...")

@@ -1,6 +1,6 @@
 music = {
-    "stealth": "https://www.youtube.com/watch?v=U47Tr9BB_wE",
-    "march": "https://www.youtube.com/watch?v=Xqeq4b5u_Xw",
-    "skyfall": "https://www.youtube.com/watch?v=DeumyOzKqgI&pp=ygUHc2t5ZmFsbA%3D%3D",
-    "wolf": "https://www.youtube.com/watch?v=ThCH0U6aJpU&list=PLnrGi_-oOR6wm0Vi-1OsiLiV5ePSPs9oF&index=21"
+    "hame tumse hua hai pyaar": "https://youtu.be/siw7-MTgE4s?si=RRG4-aHfjoWveHUn",
+    "love": "https://youtu.be/uWoYIOcOpwU?si=MHksclaHS3eD-wUe",
+    "believer": "https://youtu.be/W0DM5lcj6mw?si=VdzEB_NDfoedK33x",
+    "dj to the max": "https://youtu.be/UjBhbMMgLzc?si=_i_aD7v99Dj4gn4f"
 }
