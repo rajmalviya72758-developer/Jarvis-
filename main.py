@@ -3,6 +3,7 @@ import webbrowser
 import pyttsx3
 import musicLibrary
 import requests
+import pyautogui
 #List of pakages used.
 '''
 pip install pyttsx3
@@ -12,6 +13,7 @@ pip install gTTS
 pip install pyttsx3
 pip install Pyaudio
 pip install SpeechRecognition
+pip install pyautogui # use this to go to desktop
 '''
 
 # from openai import OpenAI
@@ -66,38 +68,50 @@ def speak(text):
 def processCommand(c):
     if "open google" in c.lower():
         webbrowser.open("https://google.com")
+        speak("Opening google...")
+
     elif "open facebook" in c.lower():
         webbrowser.open("https://facebook.com")
+        speak("Opening facebook...")
+
     elif "open youtube" in c.lower():
         webbrowser.open("https://youtube.com")
+        speak("Opening youtube...")
+
     elif "open linkedin" in c.lower():
         webbrowser.open("https://linkedin.com")
+        speak("Opening linkedin...")
+
     elif "open monkey type" in c.lower():
         webbrowser.open("https://monkeytype.com/")
+        speak("Opening monkey type...")
+
     elif "open chat ai" in c.lower():
         webbrowser.open("https://chatgpt.com/")
+        speak("Opening chat gpt...")
+
     elif c.lower().startswith("play"):
         song = c.lower().split(" ")[1]
         link = musicLibrary.music[song]
         webbrowser.open(link)
+        speak(f"playing {song}")
 
-    elif "news" in c.lower():
-        r = requests.get(f"https://newsapi.org/v2/top-headlines?country=in&apiKey={newsapi}")
-        if r.status_code == 200:
-            # Parse the JSON response
-            data = r.json()
-            
-            # Extract the articles
-            articles = data.get('articles', [])
-            
-            # Print the headlines
-            for article in articles:
-                speak(article['title'])
+    elif "go home" in c.lower():
+        pyautogui.hotkey('win', 'd')
+        speak("Going to desktop")
+
+    elif "open whatsapp" in c.lower():
+       webbrowser.open("https://web.whatsapp.com/")
 
     # else:
-    #     # Let OpenAI handle the request
-    #     output = aiProcess(c)
-    #     speak(output) 
+    # output = aiProcess(c)
+    # speak(output)
+
+    
+    else:
+        # Let AI handle the request
+        webbrowser.open("https://chatgpt.com/")
+        speak("use this to ger your answer") 
 
 
 
