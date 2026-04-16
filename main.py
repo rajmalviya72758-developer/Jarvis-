@@ -14,6 +14,7 @@ pip install pyttsx3
 pip install Pyaudio
 pip install SpeechRecognition
 pip install pyautogui # use this to go to desktop
+pip install pocketsphinx
 '''
 
 # from openai import OpenAI
@@ -21,11 +22,10 @@ from gtts import gTTS
 import pygame
 import os
 
-# pip install pocketsphinx
 
 recognizer = sr.Recognizer()
 engine = pyttsx3.init() 
-# newsapi = "<Your Key Here>"
+
 
 def speak_old(text):
     engine.say(text)
@@ -50,7 +50,7 @@ def speak(text):
     
     pygame.mixer.music.unload()
     os.remove("temp.mp3") 
-#I have comented this as i do not have any api key
+#I have commented this as i do not have any api key
 '''def aiProcess(command):
     client = OpenAI(api_key="<Your Key Here>",
     )
